@@ -133,6 +133,6 @@ dmypy.json
 Thumbs.db
 
 # Data files (opcional, descomenta si quieres ignorar archivos de datos grandes)
-*.csv
-*.xlsx
+#.csv
+#.xlsx
 data/
