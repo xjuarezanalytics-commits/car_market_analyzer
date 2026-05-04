@@ -144,7 +144,7 @@ PLOT_THEME = dict(
     font=dict(family='DM Sans', color='#9ca3af'),
     xaxis=dict(gridcolor='rgba(255,255,255,0.04)', zerolinecolor='rgba(255,255,255,0.08)'),
     yaxis=dict(gridcolor='rgba(255,255,255,0.04)', zerolinecolor='rgba(255,255,255,0.08)'),
-    margin=dict(l=10, r=10, t=30, b=10), height=360,
+    margin=dict(l=10, r=10, t=30, b=10),
 )
 
 # ── Row 1 ─────────────────────────────────────────────────────────────────────
@@ -153,12 +153,12 @@ col1, col2 = st.columns(2)
 
 with col1:
     fig = px.histogram(filtered, x="price", nbins=60, title="Price Distribution", color_discrete_sequence=["#f59e0b"])
-    fig.update_layout(**PLOT_THEME)
+    fig.update_layout(**PLOT_THEME, height=360)
     st.plotly_chart(fig, use_container_width=True)
 
 with col2:
     fig = px.histogram(filtered, x="odometer", nbins=60, title="Odometer Distribution", color_discrete_sequence=["#818cf8"])
-    fig.update_layout(**PLOT_THEME)
+    fig.update_layout(**PLOT_THEME, height=360)
     st.plotly_chart(fig, use_container_width=True)
 
 # ── Row 2 ─────────────────────────────────────────────────────────────────────
@@ -171,7 +171,7 @@ with col3:
         color="condition", title="Price vs Odometer by Condition",
         opacity=0.6, color_discrete_sequence=px.colors.qualitative.Vivid
     )
-    fig.update_layout(**PLOT_THEME)
+    fig.update_layout(**PLOT_THEME, height=360)
     st.plotly_chart(fig, use_container_width=True)
 
 with col4:
@@ -179,7 +179,7 @@ with col4:
         filtered, x="condition", y="price", title="Price by Condition",
         color="condition", color_discrete_sequence=px.colors.qualitative.Vivid
     )
-    fig.update_layout(**PLOT_THEME)
+    fig.update_layout(**PLOT_THEME, height=360)
     st.plotly_chart(fig, use_container_width=True)
 
 # ── Row 3 ─────────────────────────────────────────────────────────────────────
@@ -203,7 +203,7 @@ with col6:
         fuel_counts, names='fuel', values='count', title="Listings by Fuel Type",
         color_discrete_sequence=px.colors.qualitative.Vivid, hole=0.45
     )
-    fig.update_layout(**PLOT_THEME)
+    fig.update_layout(**PLOT_THEME, height=420)
     st.plotly_chart(fig, use_container_width=True)
 
 # ── Price trend by year ───────────────────────────────────────────────────────
